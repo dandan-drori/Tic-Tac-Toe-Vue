@@ -1,5 +1,16 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+	<section class="about">
+		<Back />
+		<h2>About</h2>
+		<p>
+			Simple Tic-Tac-Toe game made by @Dandan_Drori
+		</p>
+	</section>
 </template>
+
+<script>
+import Back from '@/cmps/Back'
+export default {
+	components: { Back },
+}
+</script>

@@ -1,0 +1,27 @@
+.shape {
+	.X {
+		position: relative;
+		div {
+			width: 2px;
+			height: 110px;
+			border-radius: 1rem;
+			background-color: #f2d50f;
+			position: absolute;
+			top: 0;
+			left: 0;
+			transform: translateY(-55px) rotateZ(-45deg);
+
+			&:last-of-type {
+				transform: translateY(-55px) rotateZ(45deg);
+			}
+		}
+	}
+
+	.O {
+		width: 100px;
+		height: 100px;
+		background-color: transparent;
+		border: 2px solid #13f1fc;
+		border-radius: 50%;
+	}
+}

@@ -1,0 +1,41 @@
+.settings {
+	display: grid;
+	place-items: center;
+	min-height: 100vh;
+	padding: 1rem;
+	background: linear-gradient(to bottom right, #7117ea, #ea6060);
+
+	h2 {
+		position: absolute;
+		top: 15%;
+		font-size: 3rem;
+		color: #fefefe;
+	}
+
+	.menu {
+		display: flex;
+		flex-direction: column;
+		background: rgba(255, 255, 255, 0.2);
+		border-radius: 16px;
+		box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+		backdrop-filter: blur(5px);
+		-webkit-backdrop-filter: blur(5px);
+		border: 1px solid rgba(255, 255, 255, 0.3);
+		padding: 1rem;
+
+		button {
+			padding: 0.5rem 3.5rem;
+			font-size: 0.9rem;
+			margin-bottom: 0.4rem;
+			background-color: transparent;
+			border: 1px solid #fefefe;
+			border-radius: 0.3rem;
+			color: #fefefe;
+			transition: background-color 0.2s ease-in-out;
+
+			&:hover {
+				background-color: rgba(255, 255, 255, 0.2);
+			}
+		}
+	}
+}

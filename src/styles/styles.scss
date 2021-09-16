@@ -1,0 +1,16 @@
+// SETUP
+@import 'setup/base';
+
+// CMPS
+@import 'cmps/Board';
+@import 'cmps/Cell';
+@import 'cmps/Shape';
+@import 'cmps/Modal';
+@import 'cmps/Score';
+@import 'cmps/Back';
+
+// VIEWS
+@import 'views/Home';
+@import 'views/Game';
+@import 'views/Settings';
+@import 'views/About';
