@@ -11,11 +11,14 @@ function getScore() {
 	return gScore
 }
 
-function onMarkCell(idx, shape) {
-	gBoard.splice(idx, 1, shape)
+function onMarkCell(idx, shape, board = gBoard) {
+	board.splice(idx, 1, shape)
 }
 
 function onCheckGameOver(board) {
+	if (!board.includes('')) {
+		return 'tie'
+	}
 	if (
 		(board[0] === board[1] && board[1] === board[2]) || // horizontal
 		(board[0] === board[3] && board[3] === board[6]) // vertical
@@ -35,9 +38,6 @@ function onCheckGameOver(board) {
 		(board[2] === board[4] && board[4] === board[6]) // diagonal
 	) {
 		return board[4]
-	}
-	if (!board.includes('')) {
-		return 'tie'
 	}
 }
 

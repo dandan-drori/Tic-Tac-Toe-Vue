@@ -7,12 +7,14 @@ import {
 	onCheckGameOver,
 	onClearBoard,
 } from '../services/game-service.js'
+import { easyBotSelectMove, mediumBotSelectMove } from '../services/bot-service.js'
 import { storageService } from '@/services/storage-service.js'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
 	state: {
+		mode: 'medium',
 		board: getBoard(),
 		turn: 'X',
 		winner: '',
@@ -35,8 +37,19 @@ export default new Vuex.Store({
 	mutations: {
 		markCell(state, { idx, shape }) {
 			onMarkCell(idx, shape)
+			if (state.mode === 'pvp') return
+			if (onCheckGameOver(state.board)) return
+			let botIdx
+			if (state.mode === 'easy') {
+				botIdx = easyBotSelectMove(state.board)
+			} else if (state.mode === 'medium') {
+				botIdx = mediumBotSelectMove(state.board)
+			}
+			if (botIdx === -1) return
+			onMarkCell(botIdx, 'O')
 		},
 		switchTurn(state) {
+			if (state.mode !== 'pvp') return
 			state.turn = state.turn === 'X' ? 'O' : 'X'
 		},
 		checkGameOver(state) {

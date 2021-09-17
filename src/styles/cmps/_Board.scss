@@ -3,6 +3,11 @@
 	grid-template-columns: repeat(3, 160px);
 	grid-auto-rows: 160px;
 
+	@media (max-width: 768px) {
+		grid-template-columns: repeat(3, 130px);
+		grid-auto-rows: 130px;
+	}
+
 	li {
 		&:first-child {
 			border-top: none;

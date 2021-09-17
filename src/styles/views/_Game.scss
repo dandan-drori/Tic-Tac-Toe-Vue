@@ -4,4 +4,8 @@
 	min-height: 100vh;
 	padding: 1rem;
 	background: linear-gradient(to bottom right, #7117ea, #ea6060);
+
+	@media (max-width: 768px) {
+		padding: 0;
+	}
 }
