@@ -5,6 +5,11 @@
 	padding: 1rem;
 	background: linear-gradient(to bottom right, #7117ea, #ea6060);
 
+	.mode {
+		color: #fefefe;
+		font-size: 1.5rem;
+	}
+
 	@media (max-width: 768px) {
 		padding: 0;
 	}

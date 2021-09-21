@@ -18,6 +18,10 @@ const routes = [
 		component: () => import('@/views/About.vue'),
 	},
 	{
+		path: '/sub-menu',
+		component: () => import('@/views/SubMenu.vue'),
+	},
+	{
 		path: '/',
 		component: Home,
 	},

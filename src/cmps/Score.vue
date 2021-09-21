@@ -3,12 +3,12 @@
 		<section class="X">
 			<Shape shape="X" />
 			<span>:</span>
-			<span>{{ score.X }}</span>
+			<span>{{ score[mode].X }}</span>
 		</section>
 		<section class="O">
 			<Shape shape="O" />
 			<span>:</span>
-			<span>{{ score.O }}</span>
+			<span>{{ score[mode].O }}</span>
 		</section>
 	</section>
 </template>
@@ -20,6 +20,9 @@ export default {
 	computed: {
 		score() {
 			return this.$store.getters.score
+		},
+		mode() {
+			return this.$store.getters.mode
 		},
 	},
 }

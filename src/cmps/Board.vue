@@ -21,13 +21,18 @@ export default {
 		winner() {
 			return this.$store.getters.winner
 		},
+		mode() {
+			return this.$store.getters.mode
+		},
 	},
 	methods: {
 		markCell({ idx, shape }) {
 			if (this.board[idx] || this.winner) return
 			this.$store.commit('markCell', { idx, shape })
 			this.$store.commit('checkGameOver')
-			this.$store.commit('switchTurn')
+			if (this.mode === 'pvp') {
+				this.$store.commit('switchTurn')
+			}
 		},
 	},
 }

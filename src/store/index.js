@@ -7,14 +7,18 @@ import {
 	onCheckGameOver,
 	onClearBoard,
 } from '../services/game-service.js'
-import { easyBotSelectMove, mediumBotSelectMove } from '../services/bot-service.js'
+import {
+	easyBotSelectMove,
+	mediumBotSelectMove,
+	hardBotSelectMove,
+} from '../services/bot-service.js'
 import { storageService } from '@/services/storage-service.js'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
 	state: {
-		mode: 'medium',
+		mode: '',
 		board: getBoard(),
 		turn: 'X',
 		winner: '',
@@ -33,29 +37,32 @@ export default new Vuex.Store({
 		score(state) {
 			return state.score
 		},
+		mode(state) {
+			return state.mode
+		},
 	},
 	mutations: {
 		markCell(state, { idx, shape }) {
 			onMarkCell(idx, shape)
 			if (state.mode === 'pvp') return
 			if (onCheckGameOver(state.board)) return
-			let botIdx
-			if (state.mode === 'easy') {
-				botIdx = easyBotSelectMove(state.board)
-			} else if (state.mode === 'medium') {
-				botIdx = mediumBotSelectMove(state.board)
+			const bots = {
+				easy: easyBotSelectMove,
+				medium: mediumBotSelectMove,
+				hard: hardBotSelectMove,
 			}
+			const botIdx = bots[state.mode](state.board)
 			if (botIdx === -1) return
 			onMarkCell(botIdx, 'O')
 		},
 		switchTurn(state) {
-			if (state.mode !== 'pvp') return
 			state.turn = state.turn === 'X' ? 'O' : 'X'
 		},
 		checkGameOver(state) {
 			const winner = onCheckGameOver(state.board)
 			state.winner = winner
-			if (winner) state.score[winner]++
+			if (winner === 'tie') return
+			if (winner) state.score[state.mode][winner]++
 			storageService.setInStorage('score', state.score)
 		},
 		clearBoard(state) {
@@ -65,7 +72,10 @@ export default new Vuex.Store({
 		},
 		resetScore(state) {
 			localStorage.clear()
-			state.score = { X: 0, O: 0 }
+			state.score = getScore()
+		},
+		setMode(state, mode) {
+			state.mode = mode
 		},
 	},
 })

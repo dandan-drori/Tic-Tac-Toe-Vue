@@ -1,11 +1,18 @@
 <template>
 	<section class="back">
-		<router-link to="/">
+		<router-link :to="link">
 			←
 		</router-link>
 	</section>
 </template>
 
 <script>
-export default {}
+export default {
+	props: { path: String },
+	computed: {
+		link() {
+			return this.path || '/'
+		},
+	},
+}
 </script>
