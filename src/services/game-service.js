@@ -27,9 +27,6 @@ function onMarkCell(idx, shape, board = gBoard) {
 }
 
 function onCheckGameOver(board) {
-	if (!board.includes('')) {
-		return 'tie'
-	}
 	if (
 		(board[6] === board[7] && board[7] === board[8] && board[7]) || // horizontal
 		(board[2] === board[5] && board[5] === board[8] && board[5]) // vertical
@@ -49,6 +46,9 @@ function onCheckGameOver(board) {
 		(board[0] === board[3] && board[3] === board[6] && board[3]) // vertical
 	) {
 		return board[0]
+	}
+	if (!board.includes('')) {
+		return 'tie'
 	}
 }
 

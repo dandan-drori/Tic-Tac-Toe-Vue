@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Tic-Tac-Toe-Vue/precache-manifest.d4299bd52f564554b077d72c7879d94d.js"
+  "/Tic-Tac-Toe-Vue/precache-manifest.58df066b29133c36ba73533cc833faf9.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "tic-tac-toe"});
