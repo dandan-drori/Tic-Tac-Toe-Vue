@@ -30,6 +30,7 @@ export default {
 			if (this.board[idx] || this.winner) return
 			this.$store.commit('markCell', { idx, shape })
 			this.$store.commit('checkGameOver')
+			// comment
 			if (this.mode === 'pvp') {
 				this.$store.commit('switchTurn')
 			}

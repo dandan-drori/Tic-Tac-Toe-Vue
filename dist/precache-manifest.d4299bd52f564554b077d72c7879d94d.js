@@ -1,15 +1,15 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "420521441800263c3ee5",
+    "revision": "dd893850f6c887a13bb7",
     "url": "/Tic-Tac-Toe-Vue/css/app.5cd7954c.css"
   },
   {
-    "revision": "b4a4e671c424d65c86008148d5503c74",
+    "revision": "920d6d8a0b716b1936b7f69bad5e28a5",
     "url": "/Tic-Tac-Toe-Vue/index.html"
   },
   {
-    "revision": "420521441800263c3ee5",
-    "url": "/Tic-Tac-Toe-Vue/js/app.7e0cc83e.js"
+    "revision": "dd893850f6c887a13bb7",
+    "url": "/Tic-Tac-Toe-Vue/js/app.b991c7ee.js"
   },
   {
     "revision": "9e1b17d9438a983556ec",
@@ -24,8 +24,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Tic-Tac-Toe-Vue/js/chunk-a4c5ca0c.35424744.js"
   },
   {
-    "revision": "8686a7db25fc8ca61df2",
-    "url": "/Tic-Tac-Toe-Vue/js/chunk-b5b6c666.9e59ab5f.js"
+    "revision": "9d5360cf59a26d112d79",
+    "url": "/Tic-Tac-Toe-Vue/js/chunk-b5b6c666.5b89cb6c.js"
   },
   {
     "revision": "40da9f1480abcf7dab8b",
